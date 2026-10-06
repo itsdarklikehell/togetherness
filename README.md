@@ -2,7 +2,47 @@
 
 # Togetherness Table
 
-| [Live Demo](#live-demo) | [Quick Start](#quick-start) | [Goals](#goals) |
+| [Live Demo](#live-demo) | [Quick Start](#quick-start) | [Goals](#goals) | [PWA](#pwa) | [Development](#development) |
+
+## PWA
+
+Togetherness Table is a Progressive Web App. Install it on your device for an app-like experience:
+
+- **Android/Chrome**: Open the site, tap the menu, select "Add to Home screen"
+- **iOS/Safari**: Open the site, tap the share button, select "Add to Home Screen"
+- **Desktop/Chrome**: Open the site, click the install icon in the address bar
+
+The app works offline once installed. Your game state is stored locally in IndexedDB and syncs peer-to-peer when online.
+
+## Development
+
+No build step. Serve `src/` as the web root:
+
+```bash
+cd src
+python3 -m http.server 8080
+# or
+npx serve .
+```
+
+Then open http://localhost:8080 in your browser.
+
+### Running Tests
+
+```bash
+npx vitest run                          # full unit test suite
+npx vitest run tests/unit/toys.test.js  # single test file
+```
+
+### Project Structure
+
+- `src/` — application source (HTML, CSS, JS)
+- `src/lib/` — Yjs and WebRTC libraries
+- `src/toy/` — toy definitions (dice, cards, etc.)
+- `src/deckahedron/` — deckahedron dice system
+- `tests/` — unit and e2e tests
+- `bin/` — development and test scripts
+- `images/` — logos and assets
 
 ## Mission
 
