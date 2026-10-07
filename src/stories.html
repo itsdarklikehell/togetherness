@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>togetherness · component stories</title>
+<link rel="manifest" href="/public/manifest.json">
+  <title>togetherness · component stories</title>
 <link rel="stylesheet" href="ui.css">
 
 <!-- ── Module imports ─────────────────────────────────────────────────────── -->
@@ -678,6 +679,14 @@ story('Drag ghost', 'local + remote simultaneous', () => {
 });
 
 renderNav();
+</script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/public/sw.js');
+    });
+  }
 </script>
 </body>
 </html>
